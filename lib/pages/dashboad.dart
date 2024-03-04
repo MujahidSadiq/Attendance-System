@@ -5,55 +5,66 @@ class MyDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dashboard'),
+        title: Text('Attendance System'),
+        backgroundColor: Colors.blue,
       ),
       drawer: Drawer(
-        child: ListView(
+        child: Column(
           children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.person,
-                      size: 60,
-                      color: Colors.blue,
+            Container(
+              width: double.infinity,
+              color:
+                  Colors.blue, // Background color for the DrawerHeader section
+              child: DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors
+                      .transparent, // Set to transparent to avoid overlapping colors
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.person,
+                        size: 60,
+                        color: Colors.blue,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'User Name',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
+                    SizedBox(height: 10),
+                    Text(
+                      'User Name',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-            ListTile(
-              title: Text('Mark Attendance'),
-              onTap: () {
-                // Add logic for Mark Attendance button
-              },
-            ),
-            ListTile(
-              title: Text('Mark Leave'),
-              onTap: () {
-                // Add logic for Mark Leave button
-              },
-            ),
-            ListTile(
-              title: Text('View Attendance'),
-              onTap: () {
-                // Add logic for View Attendance button
-              },
+            Expanded(
+              child: Container(
+                color:
+                    Colors.white, // Background color for the rest of the Drawer
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: Text('Attendance Records'),
+                      onTap: () {
+                        // Add logic for Mark Attendance button
+                      },
+                    ),
+                    ListTile(
+                      title: Text('Leave Records'),
+                      onTap: () {
+                        // Add logic for Mark Leave button
+                      },
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
@@ -85,6 +96,10 @@ class MyDashboard extends StatelessWidget {
           ],
         ),
       ),
+
+
+    
+
     );
   }
 }

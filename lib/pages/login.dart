@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:page_navigation_by_get/pages/dashboad.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({super.key});
@@ -74,6 +75,7 @@ class _MyLoginState extends State<MyLogin> {
                           color: Colors.white,
                           onPressed: () {
                             Get.toNamed('/dashboard');
+                            Get.offAll(() => MyDashboard());
                           },
                           icon: Icon(Icons.arrow_forward),
                         ),

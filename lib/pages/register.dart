@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:page_navigation_by_get/pages/dashboad.dart';
 
 class MyRegister extends StatefulWidget {
   const MyRegister({super.key});
@@ -129,6 +130,7 @@ class _MyRegisterState extends State<MyRegister> {
                                 color: Colors.white,
                                 onPressed: () {
                                   Get.toNamed('/dashboard');
+                                  Get.offAll(() => MyDashboard());
                                 },
                                 icon: Icon(
                                   Icons.arrow_forward,
